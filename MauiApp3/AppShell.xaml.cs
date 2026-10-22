@@ -1,10 +1,17 @@
-﻿namespace MauiApp3
+using Microsoft.Extensions.DependencyInjection;
+
+namespace MauiApp3
 {
-    public partial class AppShell : Shell
+    public partial class App : Application
     {
-        public AppShell()
+        public App()
         {
             InitializeComponent();
+        }
+
+        protected override Window CreateWindow(IActivationState? activationState)
+        {
+            return new Window(new AppShell());
         }
     }
 }
